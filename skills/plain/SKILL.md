@@ -1,5 +1,5 @@
 ---
-name: plain-copy
+name: plain
 description: Find the terms a named reader can't parse, and decide for each whether to replace it or keep it and explain it. Use before sending a document to someone outside the work — a lead, a client, a stakeholder, a new joiner — and whenever copy is technically correct but lands flat with its audience.
 ---
 
@@ -9,12 +9,12 @@ Three skills guard public copy, and each asks a different question:
 
 | | asks |
 |---|---|
-| `humanized-copy` | would anyone say this? |
-| `honest-copy` | is this true? |
-| **`plain-copy`** | **can this reader parse it?** |
+| `copy:humanize` | would anyone say this? |
+| `copy:honest` | is this true? |
+| **`copy:plain`** | **can this reader parse it?** |
 
 Run this one **first**. Glossing a term adds words and changes content, so
-`humanized-copy` should measure what will actually ship. `honest-copy` stays
+`copy:humanize` should measure what will actually ship. `copy:honest` stays
 last, because any rewrite can turn a careful claim into a confident one.
 
 ## Why a tool and not a careful re-read
@@ -40,7 +40,7 @@ who knows the regulations and has not seen our data" is.
 ## 2. Detect
 
 ```sh
-/home/menser/.claude/skills/plain-copy/detect.py --audience "<who>" path/to/copy.md
+/home/menser/.claude/skills/copy/skills/plain/detect.py --audience "<who>" path/to/copy.md
 ```
 
 Add `--all` to include tables and lists. By default they're skipped — a table of
@@ -114,7 +114,7 @@ wearing a vocabulary costume.
 
 ## 6. Record the decision
 
-Write what you decided into the project's `.claude/skills/plain-copy/terms.md`.
+Write what you decided into the project's `.claude/skills/copy/plain/terms.md`.
 Sections are load-bearing — `detect.py` routes on the header text:
 
 ```markdown
@@ -170,7 +170,7 @@ opaque, and nothing here will find it. Raising the sensitivity floods the report
 with ordinary words, so the floor stays where it is and this stays a known gap.
 
 **Glossing costs words.** Expect a document to get longer and its reading grade
-to barely move. This skill buys comprehension, not brevity — `humanized-copy`
+to barely move. This skill buys comprehension, not brevity — `copy:humanize`
 owns length, and it should measure after this pass rather than before.
 
 ## Sources

@@ -1,5 +1,5 @@
 ---
-name: honest-copy
+name: honest
 description: >-
   Audit public-facing copy for false, unverifiable, or fabricated claims —
   store pages, READMEs, release notes, announcement posts, dev-blog drafts,
@@ -154,7 +154,7 @@ as the repo — the no-fabrication rule runs all the way to the marketing copy.
 A claim that survives this audit should be one you would be comfortable having
 checked by someone who already knows the subject.
 
-`humanized-copy` is the companion to this skill, not a replacement. That one asks
+`copy:humanize` is the companion to this skill, not a replacement. That one asks
 *would anyone say this*; this one asks *is this true*. Copy ships only when both
 pass, and this audit runs **last** — a rewrite for rhythm can quietly change a
 claim, so a passing audit only counts against the wording that will actually

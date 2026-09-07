@@ -1,5 +1,5 @@
 ---
-name: copy-desk
+name: desk
 description: >-
   Turn a dense draft — receipts, numbers, lists, notes-to-self — into one clean
   piece of prose a stranger would read to the end, via a role chain:
@@ -12,13 +12,13 @@ argument-hint: "[path/to/draft.md] [--panel role,role,role] [--cut-below \"marke
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Agent, Skill
 ---
 
-# copy-desk
+# copy:desk
 
 The desk a draft crosses on its way to print. Four roles in sequence, each one
 transforming the text and handing it on.
 
-Three sibling skills each ask public copy a single question — `honest-copy` asks
-*is this true?*, `humanized-copy` asks *would anyone say this?*, `plain-copy`
+Three sibling skills each ask public copy a single question — `copy:honest` asks
+*is this true?*, `copy:humanize` asks *would anyone say this?*, `copy:plain`
 asks *can this reader parse it?* This one asks **will anyone read it to the end?**
 and answers it with a chain rather than an audit.
 
@@ -55,7 +55,7 @@ and a title.
   they usually have a specific contrast in mind.
 - **Timestamps sparingly.** Keep only the few that set real pace; cut the rest to
   plain phrasing.
-- Run the `plain-copy` skill over the result — gloss or cut every internal term.
+- Run the `copy:plain` skill over the result — gloss or cut every internal term.
 - Keep the author's voice. Match the register of the draft; do not add hype.
 
 **3. Reader panel.** Three readers, spawned **concurrently as separate subagents**
@@ -95,7 +95,7 @@ hand-waving or jargon, what they would cut, and the one line that earned their t
 same spot, fix it. Where they disagree, side with the outsider on clarity and the
 skeptic on tone.
 
-**5. Honesty gate.** Run the `honest-copy` skill on the result and apply its fixes.
+**5. Honesty gate.** Run the `copy:honest` skill on the result and apply its fixes.
 A piece that now reads well can still claim more than it earned.
 
 ## Output

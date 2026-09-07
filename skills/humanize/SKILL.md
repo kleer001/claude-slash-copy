@@ -1,5 +1,5 @@
 ---
-name: humanized-copy
+name: humanize
 description: >-
   Rewrite public-facing copy so it reads like a person wrote it — store pages,
   forum posts, captions, release notes, emails. Cuts it to a length people will
@@ -7,16 +7,16 @@ description: >-
   8th-grade reading level with varied sentence length. TRIGGER when the user
   asks to humanize, de-slop, tighten, shorten or plain-language any copy, when
   copy reads stilted, bloated or AI-written, and at the release gate alongside
-  honest-copy.
+  copy:honest.
 argument-hint: "[path/to/copy.md or inline copy]"
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
 
 Rewrite the copy at **$ARGUMENTS** so a person would say it out loud.
 
-This is the companion to `honest-copy`, not a replacement. That skill asks *is this
+This is the companion to `copy:honest`, not a replacement. That skill asks *is this
 true*. This one asks *would anyone say this*. Copy ships only when both pass, and
-`honest-copy` runs last — a rewrite for rhythm can quietly change a claim.
+`copy:honest` runs last — a rewrite for rhythm can quietly change a claim.
 
 ## Scope
 
@@ -61,7 +61,7 @@ reader can see in the screenshot, or telling players something they already assu
 ## 2. Measure first
 
 ```sh
-/home/menser/.claude/skills/humanized-copy/check.py --budget 200 --fenced path/to/copy.md
+/home/menser/.claude/skills/copy/skills/humanize/check.py --budget 200 --fenced path/to/copy.md
 ```
 
 Drop `--fenced` for ordinary prose. Use it when the copy lives in ``` blocks; each
@@ -73,7 +73,7 @@ notes are not what a reader sees, and counting them makes the budget meaningless
 
 ```sh
 python3 -c "print(open('itch_page_description.md').read().split('---',1)[1])" > /tmp/body.md
-/home/menser/.claude/skills/humanized-copy/check.py --budget 200 /tmp/body.md
+/home/menser/.claude/skills/copy/skills/humanize/check.py --budget 200 /tmp/body.md
 ```
 
 The script reports reading grade, mean sentence length, length spread, and hits
@@ -90,7 +90,7 @@ searches for. That is what `## Exceptions` is for, and each one names the reason
 load-bearing there.
 
 Those belong to the repo, not to the house list. A project keeps its own
-`.claude/skills/humanized-copy/banned.md`, and `check.py` overlays the nearest one
+`.claude/skills/copy/humanize/banned.md`, and `check.py` overlays the nearest one
 above the file being checked: its entries add bans, its `## Exceptions` strike words
 the house list would otherwise flag. The run prints which project list it applied, so
 a spared word is always traceable to the file that spared it. Nothing project-specific
@@ -98,7 +98,7 @@ goes in the house list.
 
 ## 3. The tells
 
-**Read `/home/menser/.claude/skills/humanized-copy/tells.md` before the tell pass.**
+**Read `/home/menser/.claude/skills/copy/skills/humanize/tells.md` before the tell pass.**
 That file is the live catalog; this section is only how to use it and how to grow it.
 Do not carry a remembered list — the catalog moves, and the copy in front of you may
 be failing on something added after the last time you looked.
@@ -108,7 +108,7 @@ catches it. Work them in rank order: reader weight is not uniform, and a fabrica
 number sinks a page that a stray em-dash only bruises.
 
 Two records are marked `delegated` — invented facts and fabricated citations belong to
-`honest-copy`'s six tests. They are catalogued here so the boundary between the two
+`copy:honest`'s six tests. They are catalogued here so the boundary between the two
 skills reads the same from either side, not so this skill audits them.
 
 ### Adding a tell
@@ -186,8 +186,8 @@ them to say out loud, it will embarrass them in print.
 ## Output
 
 Re-run `check.py` and show the before/after numbers. List what changed and why,
-grouped by the pass that caught it. Then run `honest-copy` over the result — a
-rewrite can turn a careful claim into a confident one, and `honest-copy` is the
+grouped by the pass that caught it. Then run `copy:honest` over the result — a
+rewrite can turn a careful claim into a confident one, and `copy:honest` is the
 last gate before the copy ships.
 
 Leave a sentence alone when its precision earns its stiffness. Say which sentences

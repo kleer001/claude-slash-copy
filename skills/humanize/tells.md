@@ -48,8 +48,8 @@ skill's tell list is first attested in the record.
   copy that the git history, issue tracker, or code does not settle.
 - **Observed:** https://www.mdpi.com/3042-8130/2/1/2
 - **Captured:** 2026-07-31
-- **Caught by:** judgment — `honest-copy` tests 1, 3, 4, and 6
-- **Status:** delegated to `honest-copy`. Listed here so the split between the two
+- **Caught by:** judgment — `copy:honest` tests 1, 3, 4, and 6
+- **Status:** delegated to `copy:honest`. Listed here so the split between the two
   skills is legible from either side.
 
 ### T002 — Fabricated citations
@@ -61,8 +61,8 @@ skill's tell list is first attested in the record.
   be opened and read back to the claim it is supporting.
 - **Observed:** https://www.mdpi.com/3042-8130/2/1/2
 - **Captured:** 2026-07-31
-- **Caught by:** judgment — `honest-copy`, verified against a primary source
-- **Status:** delegated to `honest-copy`.
+- **Caught by:** judgment — `copy:honest`, verified against a primary source
+- **Status:** delegated to `copy:honest`.
 
 ### T003 — Unnatural polish
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical pass for humanized-copy: readability, rhythm, and machine tells.
+"""Mechanical pass for copy:humanize: readability, rhythm, and machine tells.
 
 Reports numbers so a rewrite argues from evidence instead of taste. Exits 1 when
 a hard threshold fails, so it can gate a commit.
@@ -8,7 +8,7 @@ Ban lists are not in this file -- they live in `banned.md` beside it, parsed by
 section header. Editing that markdown retunes the linter with no code change
 (the house markdown-as-ruleset pattern; see book_loom/scripts/prefilter.py).
 
-A repo may keep its own `.claude/skills/humanized-copy/banned.md`. The nearest
+A repo may keep its own `.claude/skills/copy/humanize/banned.md`. The nearest
 one above the file being checked is overlaid on the house list: its entries add
 bans, and its `## Exceptions` strike words the house list would otherwise flag.
 
@@ -29,7 +29,7 @@ BANNED = Path(__file__).parent / "banned.md"
 
 # A project states its own additions and exceptions here, next to the copy they
 # apply to. The house list is the base; the project's file is an overlay.
-PROJECT_BANNED = Path(".claude") / "skills" / "humanized-copy" / "banned.md"
+PROJECT_BANNED = Path(".claude") / "skills" / "copy" / "humanize" / "banned.md"
 
 # A verb wearing a noun costume. Four letters before the suffix, so "action"
 # survives and "implementation" does not.

@@ -1,0 +1,8 @@
+{
+  "name": "copy",
+  "description": "Four checks on public copy, each asking a different question: is it true, would anyone say it, can this reader parse it, will anyone read it to the end.",
+  "version": "1.0.0",
+  "author": { "name": "kleer001" },
+  "license": "MIT",
+  "keywords": ["copy", "editing", "prose", "jargon", "claude-code"]
+}
