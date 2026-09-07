@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical jargon detector for unpack-jargon.
+"""Mechanical jargon detector for plain-copy.
 
 Finds candidate terms a named audience may not parse. It does not decide what to
 do with them -- necessity is a judgement the skill method makes, and the same
@@ -23,7 +23,7 @@ Signals, strongest first:
      and "wave" are all ordinary English and all opaque as terms.
 
 Decisions live in terms.md beside this script, and in the project's own
-`.claude/skills/unpack-jargon/terms.md`. A term recorded as fine for an audience
+`.claude/skills/plain-copy/terms.md`. A term recorded as fine for an audience
 stops being reported, so a second run on the same project is quieter than the
 first. That accumulation is the point.
 
@@ -39,7 +39,7 @@ from pathlib import Path
 DICTS = [Path("/usr/share/dict/american-english"), Path("/usr/share/dict/british-english"),
          Path("/usr/share/dict/words")]
 HOUSE_TERMS = Path(__file__).parent / "terms.md"
-PROJECT_REL = Path(".claude") / "skills" / "unpack-jargon" / "terms.md"
+PROJECT_REL = Path(".claude") / "skills" / "plain-copy" / "terms.md"
 
 
 def project_terms(target):

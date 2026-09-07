@@ -2,7 +2,7 @@
 
 Parsed by `detect.py`. Sections are load-bearing; the header text routes the
 entry. A project keeps its own copy at
-`.claude/skills/unpack-jargon/terms.md`, and its entries overlay this one.
+`.claude/skills/plain-copy/terms.md`, and its entries overlay this one.
 
 Records here are audience-independent: things always worth a second look, and
 words that always look like jargon to a dictionary while carrying no load.

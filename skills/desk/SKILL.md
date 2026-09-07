@@ -18,7 +18,7 @@ The desk a draft crosses on its way to print. Four roles in sequence, each one
 transforming the text and handing it on.
 
 Three sibling skills each ask public copy a single question — `honest-copy` asks
-*is this true?*, `humanized-copy` asks *would anyone say this?*, `unpack-jargon`
+*is this true?*, `humanized-copy` asks *would anyone say this?*, `plain-copy`
 asks *can this reader parse it?* This one asks **will anyone read it to the end?**
 and answers it with a chain rather than an audit.
 
@@ -55,7 +55,7 @@ and a title.
   they usually have a specific contrast in mind.
 - **Timestamps sparingly.** Keep only the few that set real pace; cut the rest to
   plain phrasing.
-- Run the `unpack-jargon` skill over the result — gloss or cut every internal term.
+- Run the `plain-copy` skill over the result — gloss or cut every internal term.
 - Keep the author's voice. Match the register of the draft; do not add hype.
 
 **3. Reader panel.** Three readers, spawned **concurrently as separate subagents**

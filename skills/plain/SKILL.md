@@ -1,9 +1,9 @@
 ---
-name: unpack-jargon
+name: plain-copy
 description: Find the terms a named reader can't parse, and decide for each whether to replace it or keep it and explain it. Use before sending a document to someone outside the work — a lead, a client, a stakeholder, a new joiner — and whenever copy is technically correct but lands flat with its audience.
 ---
 
-# Unpacking jargon
+# Plain copy
 
 Three skills guard public copy, and each asks a different question:
 
@@ -11,7 +11,7 @@ Three skills guard public copy, and each asks a different question:
 |---|---|
 | `humanized-copy` | would anyone say this? |
 | `honest-copy` | is this true? |
-| **`unpack-jargon`** | **can this reader parse it?** |
+| **`plain-copy`** | **can this reader parse it?** |
 
 Run this one **first**. Glossing a term adds words and changes content, so
 `humanized-copy` should measure what will actually ship. `honest-copy` stays
@@ -40,7 +40,7 @@ who knows the regulations and has not seen our data" is.
 ## 2. Detect
 
 ```sh
-/home/menser/.claude/skills/unpack-jargon/detect.py --audience "<who>" path/to/copy.md
+/home/menser/.claude/skills/plain-copy/detect.py --audience "<who>" path/to/copy.md
 ```
 
 Add `--all` to include tables and lists. By default they're skipped — a table of
@@ -114,7 +114,7 @@ wearing a vocabulary costume.
 
 ## 6. Record the decision
 
-Write what you decided into the project's `.claude/skills/unpack-jargon/terms.md`.
+Write what you decided into the project's `.claude/skills/plain-copy/terms.md`.
 Sections are load-bearing — `detect.py` routes on the header text:
 
 ```markdown
