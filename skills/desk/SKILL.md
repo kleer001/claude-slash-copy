@@ -66,20 +66,27 @@ the other readers' reactions, not the earlier stages, not the scaffolding. Three
 reactions that could see each other would converge into one, and the panel would be
 worth no more than a single pass. Never simulate the panel inline in the main thread.
 
-Name the roles for the subject at hand with `--panel`. The default triptych:
+The default triptych are codified agents, not personas to improvise:
 
-| Role | Reads as | Flags |
+| `agentType` | Reads as | Flags |
 |---|---|---|
-| **insider** | someone who works in the subject | hand-waving, claims that skip a step |
-| **outsider** | interested, no background | jargon, density, the paragraph they bounce off |
-| **skeptic** | allergic to being sold to | the moment it reads like an ad or a victory lap |
+| `reader-insider` | someone who works in the subject | hand-waving, claims that skip a step |
+| `reader-outsider` | interested, no background | jargon, density, the paragraph they bounce off |
+| `reader-skeptic` | allergic to being sold to | the moment it reads like an ad or a victory lap |
 
-Rename them to fit — a music post might want *producer, listener, crate-digger*; a
-short story *genre reader, cold reader, editor*. Keep three, keep them distinct, and
-keep at least one who does not already care about the subject.
+Each is defined with **no tools at all**, so the sandbox holds structurally rather than
+by instruction: a reader cannot open the source draft, the receipts, or anything else.
+The draft in its prompt is the whole of what it can see.
 
-If the repository defines matching reader agents under `.claude/agents/`, use those
-definitions rather than improvising: a codified reader is sharper than an ad-hoc one.
+A project that defines an agent of the same name under its own `.claude/agents/`
+overrides the default automatically — project scope outranks user scope — so a repo
+can sharpen a reader for its own audience without touching this skill.
+
+`--panel role,role,role` names roles for the subject instead: a music post might want
+*producer, listener, crate-digger*; a short story *genre reader, cold reader, editor*.
+Roles named this way are spawned ad-hoc, still concurrently and still isolated. Keep
+three, keep them distinct, and keep at least one who does not already care about the
+subject — that is the reader who detects density, and the easiest one to drop by accident.
 
 Each reader returns four things: where they skimmed or got lost, what read as
 hand-waving or jargon, what they would cut, and the one line that earned their trust.
