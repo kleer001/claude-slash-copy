@@ -1,6 +1,6 @@
 ---
 name: reader-outsider
-description: An interested reader with no background in the subject, who bounces off jargon and density. Spawned by copy-desk as one of three isolated readers; can be overridden per project by a .claude/agents/reader-outsider.md of the same name.
+description: An interested reader with no background in the subject, who bounces off jargon and density. Spawned by copy:desk as one of three isolated readers; can be overridden per project by a .claude/agents/reader-outsider.md of the same name.
 model: sonnet
 disallowedTools: Read, Write, Edit, Bash, Glob, Grep, Agent, Skill
 ---

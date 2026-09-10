@@ -1,6 +1,6 @@
 ---
 name: reader-insider
-description: A reader who works in the subject and knows when a claim skipped a step. Spawned by copy-desk as one of three isolated readers; can be overridden per project by a .claude/agents/reader-insider.md of the same name.
+description: A reader who works in the subject and knows when a claim skipped a step. Spawned by copy:desk as one of three isolated readers; can be overridden per project by a .claude/agents/reader-insider.md of the same name.
 model: sonnet
 disallowedTools: Read, Write, Edit, Bash, Glob, Grep, Agent, Skill
 ---

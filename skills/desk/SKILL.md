@@ -148,7 +148,7 @@ by instruction: a reader cannot open the source draft, the receipts, or anything
 The draft in its prompt is the whole of what it can see.
 
 A project that defines an agent of the same name under its own `.claude/agents/`
-overrides the default automatically — project scope outranks user scope — so a repo
+overrides the default automatically — project scope outranks plugin scope — so a repo
 can sharpen a reader for its own audience without touching this skill.
 
 `--panel role,role,role` names roles for the subject instead: a music post might want

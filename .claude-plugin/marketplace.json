@@ -1,0 +1,24 @@
+{
+  "name": "copy",
+  "owner": {
+    "name": "kleer001"
+  },
+  "metadata": {
+    "description": "copy — four checks on public copy for Claude Code: is it true, can this reader parse it, would anyone say it, will anyone read it to the end",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "copy",
+      "description": "Four editing skills for public-facing copy, with one canonical order. honest audits claims against the record, plain finds the jargon a named reader cannot parse, humanize cuts machine tells and enforces a length budget, desk runs a draft through an editorial role chain with an isolated reader panel.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/honest",
+        "./skills/plain",
+        "./skills/humanize",
+        "./skills/desk"
+      ]
+    }
+  ]
+}
