@@ -4,14 +4,13 @@
 bullet retunes the linter with no code change. Section headers are load-bearing —
 `check.py` routes by them.
 
-Seeded from the house fiction rulebook (`/home/menser/Dropbox/ai/code/book_loom/reference/voice_template.md`) Part 1 (itself collated from
-cross-repo research, `Wikipedia:Signs_of_AI_writing`, and `nanxstats/llm-cliches`),
-narrowed to what applies to **public copy**: store pages, forum posts, captions,
-release notes, emails.
+Seeded from a fiction ban list collated from `Wikipedia:Signs_of_AI_writing` and
+`nanxstats/llm-cliches`, then narrowed to what applies to **public copy**: store
+pages, forum posts, captions, release notes, emails.
 
-Deliberately **not** carried over from that file: show-don't-tell violations,
-body-as-emotion-meter tells, interiority dumps, emotion flooding, and the gothic
-atmosphere palette. Those govern fiction. A store page has no interiority to dump.
+Deliberately **not** carried over: show-don't-tell violations, body-as-emotion-meter
+tells, interiority dumps, emotion flooding, and the gothic atmosphere palette. Those
+govern fiction. A store page has no interiority to dump.
 Fiction drafts should use that file's longer list, which is tuned for scenes.
 
 When a word here is the right word, use it and say why. A blanket swap to a

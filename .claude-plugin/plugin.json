@@ -1,6 +1,6 @@
 {
   "name": "copy",
-  "description": "Four checks on public copy, each asking a different question: is it true, would anyone say it, can this reader parse it, will anyone read it to the end.",
+  "description": "Four checks on public copy, each asking a different question, in one canonical order: is it true (honest), can this reader parse it (plain), would anyone say it (humanize), will anyone read it to the end (desk), and is it still true (honest again).",
   "version": "1.0.0",
   "author": { "name": "kleer001" },
   "license": "MIT",

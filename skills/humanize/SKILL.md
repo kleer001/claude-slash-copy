@@ -12,23 +12,53 @@ argument-hint: "[path/to/copy.md or inline copy]"
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
 
+## The chain
+
+The four copy skills have one canonical order when they run together:
+
+> `copy:honest` → `copy:plain` → `copy:humanize` → `copy:desk` → `copy:honest`
+
+| stage | skill | asks |
+|---|---|---|
+| 1 | `copy:honest` | is this true? |
+| 2 | `copy:plain` | can this reader parse it? |
+| 3 | `copy:humanize` | would anyone say this? |
+| 4 | `copy:desk` | will anyone read it to the end? |
+| 5 | `copy:honest` | is it *still* true? |
+
+`copy:honest` brackets the chain. At the head, because no one should line-edit a
+sentence that is about to be cut for being false. At the tail, because a rewrite
+for rhythm turns a hedged claim into a confident one, and an audit only counts
+against the wording that actually ships.
+
+The middle three sit in this order because each measures what the next will not
+change: `copy:plain` adds words, so `copy:humanize` has to run after it to measure
+the length that will ship; `copy:desk` rewrites wholesale, so it runs last and
+carries its own copies of the gates.
+
+Run the whole chain when asked for *the copy skills*, *the copy pipeline*, or all
+of them. When one skill is named, run only that one — each stands alone.
+
+This skill is **stage 3**.
+
+---
+
 Rewrite the copy at **$ARGUMENTS** so a person would say it out loud.
 
 This is the companion to `copy:honest`, not a replacement. That skill asks *is this
 true*. This one asks *would anyone say this*. Copy ships only when both pass, and
-`copy:honest` runs last — a rewrite for rhythm can quietly change a claim.
+a `copy:honest` pass follows this one — a rewrite for rhythm can quietly change a
+claim.
 
 ## Scope
 
 Public copy: store pages, forum and social posts, video captions, release notes,
 cold emails, README intros. Short-form, second person, read once.
 
-Not fiction. Prose drafts belong to the house fiction pipeline (`book_loom`) —
-`/home/menser/Dropbox/ai/code/book_loom/reference/prose_rendering_reference.md`
-and its longer ban list in
-`/home/menser/Dropbox/ai/code/book_loom/reference/voice_template.md`, which cover
-show-don't-tell, interiority and emotional-channel rotation. None of that applies to
-a Reddit post.
+Not fiction. Fiction has its own craft — show-don't-tell, interiority,
+emotional-channel rotation — and none of it applies to a Reddit post. A draft of
+prose fiction is out of scope for this skill; hand it to whatever fiction pipeline
+you keep.
 
 ## 1. Length is a rule, not a preference
 
@@ -61,7 +91,7 @@ reader can see in the screenshot, or telling players something they already assu
 ## 2. Measure first
 
 ```sh
-/home/menser/.claude/skills/copy/skills/humanize/check.py --budget 200 --fenced path/to/copy.md
+${CLAUDE_PLUGIN_ROOT}/skills/humanize/check.py --budget 200 --fenced path/to/copy.md
 ```
 
 Drop `--fenced` for ordinary prose. Use it when the copy lives in ``` blocks; each
@@ -73,7 +103,7 @@ notes are not what a reader sees, and counting them makes the budget meaningless
 
 ```sh
 python3 -c "print(open('itch_page_description.md').read().split('---',1)[1])" > /tmp/body.md
-/home/menser/.claude/skills/copy/skills/humanize/check.py --budget 200 /tmp/body.md
+${CLAUDE_PLUGIN_ROOT}/skills/humanize/check.py --budget 200 /tmp/body.md
 ```
 
 The script reports reading grade, mean sentence length, length spread, and hits
@@ -98,7 +128,7 @@ goes in the house list.
 
 ## 3. The tells
 
-**Read `/home/menser/.claude/skills/copy/skills/humanize/tells.md` before the tell pass.**
+**Read `${CLAUDE_PLUGIN_ROOT}/skills/humanize/tells.md` before the tell pass.**
 That file is the live catalog; this section is only how to use it and how to grow it.
 Do not carry a remembered list — the catalog moves, and the copy in front of you may
 be failing on something added after the last time you looked.
@@ -155,10 +185,9 @@ formula cannot make.
   reader who already has the context. That is where the noun-pile in `tells.md`
   came from.
 
-The craft rules behind these live in the house craft list
-(`/home/menser/Dropbox/ai/code/writing_advice/master_list.md`), sections
-**Words** and **Sentences & sound** — Twain, Orwell, Strunk, Le Guin, Maugham,
-Leonard. The rest of that file is fiction craft and does not apply here.
+These are the standing craft rules on words and on sentence sound — Twain,
+Orwell, Strunk, Le Guin, Maugham, Leonard. Where those writers also govern
+fiction, that part does not apply here.
 
 ## 5. Rewrite
 
@@ -186,9 +215,9 @@ them to say out loud, it will embarrass them in print.
 ## Output
 
 Re-run `check.py` and show the before/after numbers. List what changed and why,
-grouped by the pass that caught it. Then run `copy:honest` over the result — a
-rewrite can turn a careful claim into a confident one, and `copy:honest` is the
-last gate before the copy ships.
+grouped by the pass that caught it. Then close with `copy:honest` over the result —
+a rewrite can turn a careful claim into a confident one. When `copy:desk` follows,
+it carries the closing gate instead and this skill hands off to it directly.
 
 Leave a sentence alone when its precision earns its stiffness. Say which sentences
 those are and what they are buying.

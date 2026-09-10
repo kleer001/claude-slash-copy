@@ -11,6 +11,38 @@ argument-hint: "[path/to/copy.md or inline copy]"
 allowed-tools: Read, Glob, Grep, Bash
 ---
 
+## The chain
+
+The four copy skills have one canonical order when they run together:
+
+> `copy:honest` → `copy:plain` → `copy:humanize` → `copy:desk` → `copy:honest`
+
+| stage | skill | asks |
+|---|---|---|
+| 1 | `copy:honest` | is this true? |
+| 2 | `copy:plain` | can this reader parse it? |
+| 3 | `copy:humanize` | would anyone say this? |
+| 4 | `copy:desk` | will anyone read it to the end? |
+| 5 | `copy:honest` | is it *still* true? |
+
+`copy:honest` brackets the chain. At the head, because no one should line-edit a
+sentence that is about to be cut for being false. At the tail, because a rewrite
+for rhythm turns a hedged claim into a confident one, and an audit only counts
+against the wording that actually ships.
+
+The middle three sit in this order because each measures what the next will not
+change: `copy:plain` adds words, so `copy:humanize` has to run after it to measure
+the length that will ship; `copy:desk` rewrites wholesale, so it runs last and
+carries its own copies of the gates.
+
+Run the whole chain when asked for *the copy skills*, *the copy pipeline*, or all
+of them. When one skill is named, run only that one — each stands alone.
+
+This skill is **stage 1 and stage 5**. Everything below is the same audit either
+way; at stage 5 it is auditing prose the earlier stages wrote.
+
+---
+
 Audit the copy at **$ARGUMENTS** for honesty.
 
 Read the file. Then go line by line through every claim and flag anything that
@@ -156,6 +188,10 @@ checked by someone who already knows the subject.
 
 `copy:humanize` is the companion to this skill, not a replacement. That one asks
 *would anyone say this*; this one asks *is this true*. Copy ships only when both
-pass, and this audit runs **last** — a rewrite for rhythm can quietly change a
-claim, so a passing audit only counts against the wording that will actually
-ship.
+pass.
+
+Run this audit at both ends of the chain. At the head it is triage: a claim that
+will not survive is not worth line-editing, so cutting it first saves the passes
+below it. At the tail it is the gate: a rewrite for rhythm can quietly change a
+claim, so a passing audit only counts against the wording that will actually ship.
+A head-of-chain pass never substitutes for the tail one.

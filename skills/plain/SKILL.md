@@ -1,21 +1,50 @@
 ---
 name: plain
-description: Find the terms a named reader can't parse, and decide for each whether to replace it or keep it and explain it. Use before sending a document to someone outside the work — a lead, a client, a stakeholder, a new joiner — and whenever copy is technically correct but lands flat with its audience.
+description: >-
+  Find the terms a named reader can't parse — jargon, acronyms, buzzwords, terms of
+  art, insider shorthand — and decide for each whether to replace it or keep it and
+  explain it. TRIGGER when the user asks to de-jargon or unpack the jargon, cut the
+  buzzwords, expand the acronyms, define the terms, or plain-language / plain-English
+  a document; before sending anything to someone outside the work — a lead, a client,
+  a stakeholder, a new joiner — and whenever copy is technically correct but lands
+  flat with its audience.
+argument-hint: "[path/to/copy.md] [--audience \"who\"]"
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
 
 # Plain copy
 
-Three skills guard public copy, and each asks a different question:
+The jargon skill. *De-jargon*, *unpack the jargon*, *cut the buzzwords*, *expand
+the acronyms*, *plain-language it* — all of them name this one.
 
-| | asks |
-|---|---|
-| `copy:humanize` | would anyone say this? |
-| `copy:honest` | is this true? |
-| **`copy:plain`** | **can this reader parse it?** |
+## The chain
 
-Run this one **first**. Glossing a term adds words and changes content, so
-`copy:humanize` should measure what will actually ship. `copy:honest` stays
-last, because any rewrite can turn a careful claim into a confident one.
+The four copy skills have one canonical order when they run together:
+
+> `copy:honest` → `copy:plain` → `copy:humanize` → `copy:desk` → `copy:honest`
+
+| stage | skill | asks |
+|---|---|---|
+| 1 | `copy:honest` | is this true? |
+| 2 | `copy:plain` | can this reader parse it? |
+| 3 | `copy:humanize` | would anyone say this? |
+| 4 | `copy:desk` | will anyone read it to the end? |
+| 5 | `copy:honest` | is it *still* true? |
+
+`copy:honest` brackets the chain. At the head, because no one should line-edit a
+sentence that is about to be cut for being false. At the tail, because a rewrite
+for rhythm turns a hedged claim into a confident one, and an audit only counts
+against the wording that actually ships.
+
+The middle three sit in this order because each measures what the next will not
+change: `copy:plain` adds words, so `copy:humanize` has to run after it to measure
+the length that will ship; `copy:desk` rewrites wholesale, so it runs last and
+carries its own copies of the gates.
+
+Run the whole chain when asked for *the copy skills*, *the copy pipeline*, or all
+of them. When one skill is named, run only that one — each stands alone.
+
+This skill is **stage 2**.
 
 ## Why a tool and not a careful re-read
 
@@ -40,7 +69,7 @@ who knows the regulations and has not seen our data" is.
 ## 2. Detect
 
 ```sh
-/home/menser/.claude/skills/copy/skills/plain/detect.py --audience "<who>" path/to/copy.md
+${CLAUDE_PLUGIN_ROOT}/skills/plain/detect.py --audience "<who>" path/to/copy.md
 ```
 
 Add `--all` to include tables and lists. By default they're skipped — a table of
