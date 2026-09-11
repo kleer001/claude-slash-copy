@@ -88,6 +88,12 @@ for." That is ordinary copy, not a claim about the reader's real history. The
 test is whether the sentence asserts the reader's past as fact — not whether it
 uses the word "you."
 
+In a reply to a real person this is not fabrication but accusation — and they
+know what they actually did. A hedge ("probably", "effectively") only makes it
+polite. Cut the person out of the sentence and leave the fact.
+
+> "the log line you scrolled past" → "there is a log line for this"
+
 **3. Ordinal and superlative claims**
 "First release", "the first of its kind", "most complete", "the only", "fastest",
 "the definitive". Verify ordinals against the record (`git log`,
